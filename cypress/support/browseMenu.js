@@ -100,6 +100,16 @@ export class Menu {
             .click()
 
     }
+
+    collapsibleMenu(menuNumber, dataName) {
+        cy.get('[class="show-collapsible-sidebar collapsible-sidebar border-r border-gray-300 overflow-y-auto"]')
+            .find('[class="group [&_summary::-webkit-details-marker]:hidden"]')
+            .eq(menuNumber)
+            .find('ul')
+            .find('li')
+            .find(`[data-name="${dataName}"]`)
+            .click({ force: true });
+    }
 }
 
 export const goTo = new Menu()
