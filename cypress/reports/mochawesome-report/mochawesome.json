@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-08-16T12:27:37.856Z",
+    "end": "2024-08-16T12:27:53.207Z",
+    "duration": 15351,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "1e30bda6-f97f-48d2-8688-e7b20cec1943",
+      "title": "",
+      "fullFile": "cypress\\e2e\\routes.spec.js",
+      "file": "cypress\\e2e\\routes.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9f42cc2e-b30d-41ad-ac41-a7fa4f621428",
+          "title": "Configuration customer domain: Routes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "add routes and delete",
+              "fullTitle": "Configuration customer domain: Routes add routes and delete",
+              "timedOut": null,
+              "duration": 12962,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\nlet routeName = randomNumericNumber();\ncy.get('[class=\"flex items-center justify-between\"]').find('button').contains('p', 'Add Route').click();\ncy.get('[class=\"show_side_bar side_bar shadow-xl overflow-auto w-[470px]\"]').then(addRoutePanel => {\n  cy.wrap(addRoutePanel).find('[class=\"grid grid-cols-1 gap-4\"]').find('input').type(routeName);\n  cy.wrap(addRoutePanel).find('form').find('[class=\"flex items-center gap-3 py-5\"]').contains('button', 'Save').click();\n});\ncy.get('[class=\"go2072408551\"]', {\n  timeout: 10000\n}).find('[class=\"go3958317564\"]').should('contain', 'Created Successfully');\ncy.wait(3000);\ncy.get('[class=\"flex items-center justify-between\"]').find('[class=\"flex items-center gap-x-2\"]').find('input').type(routeName, '{enter}');\ncy.wait(3000);\ncy.get('table').find('tbody>tr').eq(0).then($tr => {\n  cy.wrap($tr).find('td').contains(routeName).click();\n});\ncy.get('[class=\"flex items-center space-x-3 py-5\"]').find('button').contains('Delete').click();\ncy.get('#modal_parent').find('[class=\"flex justify-end gap-2\"]').contains('button', 'Delete').click();\ncy.get('[class=\"go2072408551\"]', {\n  timeout: 10000\n}).find('[class=\"go3958317564\"]').should('contain', 'Deleted Successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Routes' within the element: <ul.mt-2.space-y-1.px-4> and with the selector: 'a' but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Configuration customer doma...`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Routes' within the element: <ul.mt-2.space-y-1.px-4> and with the selector: 'a' but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Configuration customer doma...`\n    at Context.eval (webpack://cypressproject/./cypress/e2e/routes.spec.js:30:21)",
+                "diff": null
+              },
+              "uuid": "d4085e3d-23dc-4754-a394-247de0c0cda9",
+              "parentUUID": "9f42cc2e-b30d-41ad-ac41-a7fa4f621428",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Routes",
+              "fullTitle": "Configuration customer domain: Routes Edit Routes",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\nlet routeName = randomNumericNumber();\ncy.get('table').find('tbody>tr').eq(0).then($tr => {\n  cy.wrap($tr).find('td').invoke('text').then($td => {\n    if ($td.length > 0) {\n      cy.wrap($tr).click();\n      cy.get('[class=\"flex items-center space-x-3 py-5\"]').find('button').contains('Edit').click();\n      cy.get('[class=\"grid grid-cols-1 gap-4\"]').find('input').clear().type(routeName + '_E');\n      cy.get('[class=\"flex items-center space-x-3 py-5\"]').find('button').contains('Update').click();\n      cy.get('[class=\"go2072408551\"]', {\n        timeout: 10000\n      }).find('[class=\"go3958317564\"]').should('contain', 'Updated Successfully');\n    } else {\n      cy.log('No data found');\n    }\n  });\n});",
+              "err": {},
+              "uuid": "e7188a41-d4ce-44f2-9987-57499e2d0b54",
+              "parentUUID": "9f42cc2e-b30d-41ad-ac41-a7fa4f621428",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Add route without name",
+              "fullTitle": "Configuration customer domain: Routes Add route without name",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\ncy.get('[class=\"flex items-center justify-between\"]').find('button').contains('p', 'Add Route').click();\ncy.get('[class=\"show_side_bar side_bar shadow-xl overflow-auto w-[470px]\"]').then(addRoutePanel => {\n  cy.wrap(addRoutePanel).find('form').find('[class=\"flex items-center gap-3 py-5\"]').contains('button', 'Save').click();\n});\ncy.get('[class=\"flex items-center gap-1 mt-1\"]').find('P').should('contain', 'Required');\ncy.get('[class=\"show_side_bar side_bar shadow-xl overflow-auto w-[470px]\"]').then(addRoutePanel => {\n  cy.wrap(addRoutePanel).find('form').find('[class=\"flex items-center gap-3 py-5\"]').contains('button', 'Cancel').click();\n});",
+              "err": {},
+              "uuid": "9183dbe5-e1cf-4c1b-8a48-b740a23fc5f3",
+              "parentUUID": "9f42cc2e-b30d-41ad-ac41-a7fa4f621428",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Route name with big value check",
+              "fullTitle": "Configuration customer domain: Routes Route name with big value check",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\nlet routeName = randomAlphaNumbericNumber();\ncy.get('[class=\"flex items-center justify-between\"]').find('button').contains('p', 'Add Route').click();\ncy.get('[class=\"show_side_bar side_bar shadow-xl overflow-auto w-[470px]\"]').then(addRoutePanel => {\n  cy.wrap(addRoutePanel).find('[class=\"grid grid-cols-1 gap-4\"]').find('input').type(routeName + routeName);\n  cy.wrap(addRoutePanel).find('form').find('[class=\"flex items-center gap-3 py-5\"]').contains('button', 'Save').click();\n});\ncy.get('[class=\"flex items-center gap-1 mt-1\"]').find('P').should('contain', 'Max Value 100');",
+              "err": {},
+              "uuid": "5b79df92-4e3b-419d-bf4b-056c9d0bec54",
+              "parentUUID": "9f42cc2e-b30d-41ad-ac41-a7fa4f621428",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d4085e3d-23dc-4754-a394-247de0c0cda9"
+          ],
+          "pending": [],
+          "skipped": [
+            "e7188a41-d4ce-44f2-9987-57499e2d0b54",
+            "9183dbe5-e1cf-4c1b-8a48-b740a23fc5f3",
+            "5b79df92-4e3b-419d-bf4b-056c9d0bec54"
+          ],
+          "duration": 12962,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

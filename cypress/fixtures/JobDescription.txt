@@ -1,0 +1,26 @@
+Job description
+Kinetik is a high-growth healthcare technology company reshaping the severely fragmented healthcare transportation industry. We equip health insurances, brokers, and providers with our suite of products and solutions that are proven to increase efficiency, transparency, and interoperability.
+
+About the QA Engineer II Role:
+
+The QA Engineer II will be responsible for the creation of tests to identify issues with software before the product launch.In this role, this person will identify and analyze any bugs and errors found during the test phase, and document them for the review. The person will collaborate with software developers to fix program issues.
+
+About the QA Engineer II Responsibilities:
+• Creates tests to identify software problems and deficiencies.
+• Analyzes bugs and errors found during tests.
+• Documents results of tests for the software development team.
+• Recommends improvements in software to enhance user experience.
+• Motivates the development process for efficiency and performance.
+• Investigates product quality in order to make improvements to achieve better customer
+
+satisfaction.
+• Works together with the software developers to enhance and improve programs.
+• Plans, creates and manages the overall Quality Planning strategy.
+• Researches and compares similar competitor products.
+• Oversees continuous improvement projects.
+• Collects quality data.
+• Identifies key KPIs for product quality.
+• Maintains updated knowledge of industry trends and advancements.
+• Collaborates with the development team to understand project requirements and ensure clear communication throughout the testing process.
+• Develops and executes comprehensive test plans and test cases.
+• Conducts thorough manual and automated testing to identify defects, usability issues, and
